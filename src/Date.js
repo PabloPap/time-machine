@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Date extends Component {
+  state = {
+    task: '',
+  };
+
   render() {
     const { date } = this.props;
     return (

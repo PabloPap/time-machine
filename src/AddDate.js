@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class AddDate extends Component {
+  state = {
+    date: '',
+    dateExists: false,
+  };
+
   render() {
     return (
       <form>

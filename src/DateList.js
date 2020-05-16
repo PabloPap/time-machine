@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Date from './Date';
 
 class DateList extends Component {
+  state = {
+    date: '',
+    done: false,
+  };
+
   render() {
     const { dates } = this.props;
 

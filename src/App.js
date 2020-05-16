@@ -4,6 +4,10 @@ import AddDate from './AddDate';
 import DateList from './DateList';
 
 class App extends Component {
+  state = {
+    dates: [],
+  };
+
   render() {
     const dates = ['2018-04-23', '2019-06-13', '2014-09-29'];
     return (
