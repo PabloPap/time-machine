@@ -3,7 +3,6 @@ import Date from './Date';
 
 class DateList extends Component {
   state = {
-    date: '',
     done: false,
   };
 
