@@ -1,41 +1,50 @@
 import React, { Component } from 'react';
+import Task from './Task';
 
 class Date extends Component {
   state = {
+    value: '',
     task: '',
+  };
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      task: this.state.value,
+    });
+  };
+
+  handleAddTask = (event) => {
+    this.setState({
+      value: event.target.value,
+    });
   };
 
   render() {
     const { date } = this.props;
+
     return (
       <li className="Date">
         <h3>{date}</h3>
 
-        <form>
+        <form onSubmit={this.handleFormSubmit}>
           <div className="form-field">
             <label>Add Your Task:</label>
             <textarea
               rows="5"
               cols="30"
-              placeholder="Comment text."
+              placeholder="Add your task"
+              value={this.state.value}
+              onChange={this.handleAddTask}
               required
             ></textarea>
           </div>
-
           <div className="form-field">
-            <button type="submit">Add Task</button>
-          </div>
-
-          <div>
-            <h3>Task:</h3>
-            <p>{}</p>
-          </div>
-
-          <div className="form-field">
-            <label>Done</label>
-            <input type="checkbox" />
+            <input type="submit" value="Add Task" />
           </div>
         </form>
+        <Task task={this.state.task} />
       </li>
     );
   }
