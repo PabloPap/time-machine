@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Task from './Task';
 
 class Date extends Component {
   render() {
@@ -13,7 +14,7 @@ class Date extends Component {
             <textarea
               rows="5"
               cols="30"
-              placeholder="Comment text."
+              placeholder="type here..."
               required
             ></textarea>
           </div>
@@ -21,17 +22,8 @@ class Date extends Component {
           <div className="form-field">
             <button type="submit">Add Task</button>
           </div>
-
-          <div>
-            <h3>Task:</h3>
-            <p>{}</p>
-          </div>
-
-          <div className="form-field">
-            <label>Done</label>
-            <input type="checkbox" />
-          </div>
         </form>
+        <Task />
       </li>
     );
   }

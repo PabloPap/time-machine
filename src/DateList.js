@@ -10,15 +10,7 @@ class DateList extends Component {
         <div className="list-dates-title"></div>
         <div className="list-dates-content">
           <div className="list-row">
-            <h2 className="list-task-title">Done</h2>
-            <ul>
-              {dates.map((date) => (
-                <Date date={date} key={date} />
-              ))}
-            </ul>
-          </div>
-          <div className="list-row">
-            <h2 className="list-task-title">Ongoing</h2>
+            <h2 className="list-task-title">Missions</h2>
             <ul>
               {dates.map((date) => (
                 <Date date={date} key={date} />

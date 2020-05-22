@@ -6,6 +6,7 @@ class AddDate extends Component {
       <form>
         <label>Choose Your Past</label>
         <input type="date" max={new Date().toISOString().split('T')[0]} />
+        <button type="submit">Add Date</button>
       </form>
     );
   }
