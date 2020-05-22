@@ -2,21 +2,6 @@ import React, { Component } from 'react';
 import Date from './Date';
 
 class DateList extends Component {
-  // state = {
-  //   done: false,
-  // };
-
-  // handleCheck = (isChecked) => {
-  //   this.setState({
-  //     done: isChecked,
-  //   });
-  // };
-
-  // hendleDate = (date) => {
-  //   if (this.state.done !== date.ongoing) {
-  //     return date;
-  //   }
-  // };
   render() {
     const { dates } = this.props;
     return (
@@ -27,7 +12,7 @@ class DateList extends Component {
             <h2 className="list-task-title">Missions</h2>
             {dates.map((date) => (
               <ul key={date}>
-                <Date onChangeCheck={this.handleCheck} date={date} />
+                <Date date={date} />
               </ul>
             ))}
           </div>

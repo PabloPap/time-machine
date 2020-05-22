@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class AddDate extends Component {
   state = {
-    date: '',
+    date: new Date().toISOString().split('T')[0],
     dateExists: false,
   };
 
