@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Task from './Task';
 
 class Date extends Component {
   state = {
+    value: '',
     task: '',
   };
 
@@ -17,25 +19,15 @@ class Date extends Component {
             <textarea
               rows="5"
               cols="30"
-              placeholder="Comment text."
+              placeholder="Add your task"
               required
             ></textarea>
           </div>
-
           <div className="form-field">
-            <button type="submit">Add Task</button>
-          </div>
-
-          <div>
-            <h3>Task:</h3>
-            <p>{}</p>
-          </div>
-
-          <div className="form-field">
-            <label>Done</label>
-            <input type="checkbox" />
+            <input type="submit" value="Add Task" />
           </div>
         </form>
+        <Task task={this.state.task} />
       </li>
     );
   }

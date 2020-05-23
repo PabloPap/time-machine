@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class AddDate extends Component {
   state = {
-    date: '',
+    date: new Date().toISOString().split('T')[0],
     dateExists: false,
   };
 
@@ -11,6 +11,7 @@ class AddDate extends Component {
       <form>
         <label>Choose Your Past</label>
         <input type="date" max={new Date().toISOString().split('T')[0]} />
+        <button type="submit">Add Date</button>
       </form>
     );
   }
