@@ -38,18 +38,23 @@ class AddDate extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Choose Your Past</label>
-          <input
-            type="date"
-            max={new Date().toISOString().split('T')[0]}
-            onChange={this.handleDateChange}
-          />
-          <button type="submit">Add Date</button>
+      <div className="App__form">
+        <form onSubmit={this.handleFormSubmit} className="App__form--date">
+          <div className="App__form--body">
+            <label>Choose Your Past:</label>
+            <input
+              type="date"
+              max={new Date().toISOString().split('T')[0]}
+              onChange={this.handleDateChange}
+            />
+          </div>
+
+          <div className="App__form--btn">
+            <button type="submit">Add Date</button>
+          </div>
         </form>
         {this.state.dateExists ? (
-          <p className="error">This date has already been chosen</p>
+          <p className="App__form--error">This date has already been chosen</p>
         ) : (
           ''
         )}

@@ -8,8 +8,6 @@ class App extends Component {
     dates: [],
   };
 
-  // handleUpdateCategory = (date, category) => {};
-
   addDate = (date) => {
     this.setState((currState) => ({
       dates: [...currState.dates, date],
@@ -17,7 +15,6 @@ class App extends Component {
   };
 
   render() {
-    // const dates = ['2018-04-23', '2019-06-13', '2014-09-29'];
     return (
       <div className="App">
         <header className="App-header">

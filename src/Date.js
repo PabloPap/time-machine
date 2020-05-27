@@ -25,26 +25,27 @@ class Date extends Component {
     const { date } = this.props;
 
     return (
-      <li className="Date">
-        <h3>{date}</h3>
-
-        <form onSubmit={this.handleFormSubmit}>
-          <div className="form-field">
-            <label>Add Your Task:</label>
-            <textarea
-              rows="5"
-              cols="30"
-              placeholder="Add your task"
-              value={this.state.value}
-              onChange={this.handleAddTask}
-              required
-            ></textarea>
-          </div>
-          <div className="form-field">
-            <input type="submit" value="Add Task" />
-          </div>
-        </form>
-        <Task task={this.state.task} />
+      <li key={date}>
+        <div className="App__card--inner">
+          <h2>{date}</h2>
+          <form onSubmit={this.handleFormSubmit} className="App__card">
+            <div className="App__card--form">
+              <label>Add Your Task</label>
+              <textarea
+                rows="3"
+                cols="30"
+                placeholder="type here..."
+                value={this.state.value}
+                onChange={this.handleAddTask}
+                required
+              ></textarea>
+            </div>
+            <div className="App__card--btn">
+              <button type="submit">Add Task</button>
+            </div>
+          </form>
+          <Task task={this.state.task} />
+        </div>
       </li>
     );
   }

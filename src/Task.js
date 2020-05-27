@@ -2,8 +2,8 @@ import React from 'react';
 
 const Task = (props) => {
   return (
-    <div>
-      <h3>Task:</h3>
+    <div className="App__task">
+      <h3>Task</h3>
       <p>{props.task}</p>
     </div>
   );

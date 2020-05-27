@@ -1,48 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-image: url('./img/fancy-pants.jpg');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #dbc2cf;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.55);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.list-row {
+.App__form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.App__form--body {
+  display: inline-block;
+  padding: 1.2rem;
+  background-color: #93867f;
+}
+
+.App__form--date input {
+  margin-left: 1.5rem;
+}
+
+.App__form--error {
+  color: #dbc2cf;
+  font-weight: 700;
+}
+
+.App__form--btn button {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #9fa2b2;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: 1rem;
+  padding: 1.2rem 2.8rem;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  border-radius: 0;
+  color: #dbc2cf;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 150ms ease-in-out;
+}
+
+.App__form--btn button::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #9fa2b2;
+  z-index: -1;
+  transition: width 150ms ease-in-out;
+}
+
+.App__form--btn button:hover,
+.App__form--btn button:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.App__form--btn button:hover::after {
+  width: 110%;
+}
+
+.App__list {
+  width: 100%;
+  margin: 4rem auto 0 auto;
+}
+
+.App__list--title {
+  color: #dbc2cf;
+  font-size: 2rem;
+  display: inline-block;
+  border-bottom: 2px solid #dbc2cf;
+  margin: 0;
+}
+
+.App__list--items {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+}
+
+.App__list--items li {
+  width: 25%;
+  padding: 2rem;
+}
+
+.App__card--btn button {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.15rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  background-color: #9fa2b2;
+  box-shadow: inset 0 -0.6rem 0 -0.3rem rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+  border: none;
+  margin-top: 0.7rem;
+  width: 55%;
+  cursor: pointer;
+}
+
+.App__card--btn button:active {
+  top: 0.1em;
+}
+
+.App__card--inner {
+  background-color: #3c7a89;
+  padding: 2rem 0;
+}
+
+.App__card--form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.list-row ul {
-  display: flex;
+.App__card--form label {
+  padding: 0.5rem 0;
+}
+
+.App__task h3 {
+  margin-bottom: 0.5rem;
+}
+
+.App__task p {
+  width: 60%;
+  word-wrap: break-word;
+  text-align: left;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px dotted #ccc;
+}
+
+@media (max-width: 1024px) {
+  .App__list--items li {
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .App__list--items li {
+    width: 50%;
+  }
+}
+
+@media (max-width: 528px) {
+  .App__list--items li {
+    width: 100%;
+  }
 }
