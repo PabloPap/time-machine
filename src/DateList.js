@@ -9,7 +9,7 @@ class DateList extends Component {
         <h2 className="App__list--title">Missions</h2>
         <ul className="App__list--items">
           {dates.map((date) => (
-            <Date date={date} />
+            <Date date={date} key={date} />
           ))}
         </ul>
       </div>

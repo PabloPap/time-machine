@@ -25,7 +25,7 @@ class Date extends Component {
     const { date } = this.props;
 
     return (
-      <li key={date}>
+      <li>
         <div className="App__card--inner">
           <h2>{date}</h2>
           <form onSubmit={this.handleFormSubmit} className="App__card">

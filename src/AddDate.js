@@ -4,6 +4,7 @@ class AddDate extends Component {
   state = {
     date: new Date().toISOString().split('T')[0],
     dateExists: false,
+    dateEmpty: false,
   };
 
   sameDateExists = (currDate) => {
@@ -21,8 +22,17 @@ class AddDate extends Component {
 
     const dateExists = this.sameDateExists(this.state.date);
 
-    if (!dateExists) {
+    if (!dateExists && this.state.date) {
       this.props.onAddDate(this.state.date);
+      this.setState({ dateEmpty: false });
+    }
+
+    if (!this.state.date) {
+      this.setState({ dateEmpty: true });
+    }
+
+    if (dateExists) {
+      this.setState({ dateEmpty: false });
     }
 
     this.setState({ dateExists });
@@ -55,6 +65,11 @@ class AddDate extends Component {
         </form>
         {this.state.dateExists ? (
           <p className="App__form--error">This date has already been chosen</p>
+        ) : (
+          ''
+        )}
+        {this.state.dateEmpty ? (
+          <p className="App__form--error">Please choose a date</p>
         ) : (
           ''
         )}
