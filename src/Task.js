@@ -2,8 +2,8 @@ import React from 'react';
 
 const Task = () => {
   return (
-    <div>
-      <h3>Task:</h3>
+    <div className="App__task">
+      <h3>Task</h3>
       <p>this is the task paragraph</p>
     </div>
   );
