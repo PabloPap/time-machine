@@ -4,19 +4,15 @@ import Date from './Date';
 class DateList extends Component {
   render() {
     const { dates } = this.props;
+
     return (
-      <div className="list-dates">
-        <div className="list-dates-title"></div>
-        <div className="list-dates-content">
-          <div className="list-row">
-            <h2 className="list-task-title">Missions</h2>
-            {dates.map((date) => (
-              <ul key={date}>
-                <Date date={date} />
-              </ul>
-            ))}
-          </div>
-        </div>
+      <div className="App__list">
+        <h2 className="App__list--title">Missions</h2>
+        <ul className="App__list--items">
+          {dates.map((date) => (
+            <Date date={date} key={date} />
+          ))}
+        </ul>
       </div>
     );
   }
